@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    <button type="button" onclick="location.href='{% url 'clientes:create' %}' " >Criar novo Cliente</button>
+    <ul>
+        {% for cliente in object_list %}
+        <li>Nome: {{cliente.nome}}, Idade: {{cliente.idade}} - 
+            <a href=" {% url "clientes:update" cliente.pk %} " >Editar</a> - 
+            <a href=" {% url "clientes:detail" cliente.pk %} " >Visualizar</a> - 
+            <a href=" {% url "clientes:delete" cliente.pk %} " >Deletar</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

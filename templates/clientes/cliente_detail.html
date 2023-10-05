@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizar Cliente</title>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="location.href=' {% url 'clientes:list' %} '" >Voltar para a lista</button>
+        <h4>Dados Cliente</h4>
+        Nome: {{object.nome}}
+        <br></br>
+        Idade: {{object.idade}}
+    </div>
+</body>
+</html>
